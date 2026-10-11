@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #F7F3ED;
+    background-image: 
+      radial-gradient(at 10% 10%, rgba(200, 109, 123, 0.07) 0px, transparent 50%),
+      radial-gradient(at 90% 90%, rgba(92, 116, 93, 0.08) 0px, transparent 50%),
+      radial-gradient(at 50% 50%, rgba(197, 160, 89, 0.05) 0px, transparent 50%);
+    background-attachment: fixed;
+    color: #2A231C;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+/* Paper grain texture layer */
+.paper-texture {
+  position: relative;
+}
+.paper-texture::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  opacity: 0.035;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  z-index: 1;
+}
+
+/* Glassmorphism vintage card */
+.glass-card {
+  background: rgba(255, 253, 249, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(232, 223, 209, 0.8);
+  box-shadow: 0 20px 40px -15px rgba(61, 52, 43, 0.08),
+              0 0 15px 0 rgba(200, 109, 123, 0.05);
+}
+
+.glass-card-dark {
+  background: rgba(42, 35, 28, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(245, 239, 230, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(200, 109, 123, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(200, 109, 123, 0.6);
+}
+
+/* Vintage Tape Label Pattern */
+.tape-label-pattern {
+  background: repeating-linear-gradient(
+    45deg,
+    #FAF7F2,
+    #FAF7F2 10px,
+    #F3ECE0 10px,
+    #F3ECE0 20px
+  );
+}
